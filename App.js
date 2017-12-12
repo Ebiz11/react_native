@@ -2,22 +2,20 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import { TabNavigator} from 'react-navigation';
 
+
+// You can import from local files
+import Profile from './components/Profile';
+import Home from './components/Home';
+
 const HomeScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  <Text>Home Screen</Text>
-  <Text>Haloo ini adalah home page.</Text> 
+    <Home/>
   </View>
 );
 
 const ProfileScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-  <Text>Profile Screen</Text>
-  <Text></Text>
-  <Text>Halo ini adalah halaman detail.</Text>
-  <Text>Lustria Ebiz</Text>
-  <Text>Turi, Sleman, Yogyakarta</Text>
-  <Text>Yeah!!</Text>
-  <Text></Text>
+    <Profile/>
   </View>
 );
 
