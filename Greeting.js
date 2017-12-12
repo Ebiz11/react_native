@@ -1,21 +1,21 @@
-// import React from 'react';
-// import { StyleSheet, Text, View, Image } from 'react-native';
-//
+
 // export default class App extends React.Component {
+//   onPressLearnMore() {
+//     Alert.alert("Login Success!")
+//   }
+//
 //   render() {
-//     let pic = {
-//       uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-//     };
 //
 //     return (
 //
 //       <View style={styles.container}>
-//         <Text>Hello {this.props.name}!</Text>
-//         <Text>Mantap Jiwa!</Text>
-//         <Text>Shake your phone to open the developer menu.</Text>
 //
-//
-//         <Image source={pic} style={{width: 193, height: 110}}/>
+//       <Button
+//         onPress={this.onPressLearnMore}
+//         title="Login Ah"
+//         color="#841584"
+//         accessibilityLabel="Learn more about this purple button"
+//       />
 //       </View>
 //
 //     );

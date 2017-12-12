@@ -1,34 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
+import { View, Text, Button } from 'react-native';
+import { StackNavigator} from 'react-navigation';
 
-export default class App extends React.Component {
-  onPressLearnMore() {
-    Alert.alert("Login Success!")
-  }
+const HomeScreen = ({ navigation }) => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Home Screen</Text>
+    <Button
+      onPress={() => navigation.navigate('Details')}
+      title="Go to details"
+    />
+  </View>
+);
 
-  render() {
+const DetailsScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Details Screen</Text>
+  </View>
+);
 
-    return (
-
-      <View style={styles.container}>
-
-      <Button
-        onPress={this.onPressLearnMore}
-        title="Login"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
-      </View>
-
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const RootNavigator = StackNavigator({
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      headerTitle: 'Home',
+    },
+  },
+  Details: {
+    screen: DetailsScreen,
+    navigationOptions: {
+      headerTitle: 'Details',
+    },
   },
 });
+
+export default RootNavigator;
