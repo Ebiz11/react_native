@@ -1,36 +1,98 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import {
+  Text,
+  Button,
+  TextInput,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Alert,
+  TouchableHighlight
+} from 'react-native';
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'Lustria Ebis',
+      address: 'Turi, Sleman, Yogyakarta'
+    };
+  }
+
+  onPressLearnMore() {
+    Alert.alert('You tapped the button!')
+  }
+
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView>
+      <Text></Text>
       <Text>Profile Screen.</Text>
       <Text></Text>
-      <Text>Lustria Ebiz</Text>
-      <Text>Turi, Sleman, Yogyakarta</Text>
       <Text></Text>
-      </View>
+      <Image source={require('../assets/images/eunsol.jpg')} />
+      <Text></Text>
+      <Text></Text>
+      <Button
+        onPress={this.onPressLearnMore}
+        title="Learn More"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
+      <Text></Text>
+
+      <Text>Name: {this.state.name}</Text>
+      <Text>Address: {this.state.address}</Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text>Name: </Text>
+      <TextInput
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(name) => this.setState({name})}
+
+      />
+
+      <Text>Address:</Text>
+      <TextInput
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(address) => this.setState({address})}
+
+      />
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      <Text></Text>
+      </ScrollView>
+
+      // <View
+      //
+      // </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paragraph: {
-    margin: 24,
-    marginTop: 0,
-    fontSize: 14,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
-  },
-  logo: {
-    backgroundColor: "#056ecf",
-    height: 128,
-    width: 128,
+  buttonText: {
+    padding: 20,
+    color: 'white'
   }
-});
+})

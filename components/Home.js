@@ -1,12 +1,51 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, Button, Modal, StyleSheet } from 'react-native';
 
 export default class Profile extends Component {
+  state = {
+    modalVisible: false,
+  };
+
+  openModal() {
+    this.setState({modalVisible:true});
+  }
+
+  closeModal() {
+    this.setState({modalVisible:false});
+  }
+
   render() {
     return (
       <View style={styles.container}>
-      <Text>Home Screen</Text>
-      <Text>Haloo ini adalah home screen.</Text>
+        <Modal
+            visible={this.state.modalVisible}
+            animationType={'slide'}
+            onRequestClose={() => this.closeModal()}
+        >
+          <View style={styles.modalContainer}>
+            <View style={styles.innerContainer}>
+              <Text>This is content inside of modal component</Text>
+              <Text>This is content inside of modal component</Text>
+              <Text>This is content inside of modal component</Text>
+              <Text></Text>
+              <Text></Text>
+              <Text></Text>
+              <Text></Text>
+              <Button
+                  onPress={() => this.closeModal()}
+                  title="Close modal"
+              >
+              </Button>
+            </View>
+          </View>
+        </Modal>
+
+        <Text>Welcome to Home Page</Text>
+        <Text></Text>
+        <Button
+            onPress={() => this.openModal()}
+            title="Open modal"
+        />
       </View>
     );
   }
@@ -14,20 +53,15 @@ export default class Profile extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    flex: 1,
     justifyContent: 'center',
   },
-  paragraph: {
-    margin: 24,
-    marginTop: 0,
-    fontSize: 14,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: 'grey',
   },
-  logo: {
-    backgroundColor: "#056ecf",
-    height: 128,
-    width: 128,
-  }
+  innerContainer: {
+    alignItems: 'center',
+  },
 });
