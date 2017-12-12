@@ -1,14 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, Alert } from 'react-native';
 
 export default class App extends React.Component {
+  onPressLearnMore() {
+    Alert.alert("Login Success!")
+  }
+
   render() {
+
     return (
+
       <View style={styles.container}>
-        <Text>Selamat pagi lustria ebiz!</Text>
-        <Text></Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+
+      <Button
+        onPress={this.onPressLearnMore}
+        title="Login"
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
       </View>
+
     );
   }
 }
