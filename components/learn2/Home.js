@@ -7,17 +7,20 @@ export default class Home extends Component {
   }
 
   render() {
+
+    const { navigate } = this.props.navigation;
+
     return (
       <View style={styles.container}>
         <Text>Welcome to Ebiz App</Text>
         <Text></Text>
         <Button
-          onPress={(navigate) => this.props.navigation.navigate('Login')}
+          onPress={() => navigate('Login')}
           title="Login"
         />
         <Text></Text>
         <Button
-          onPress={(navigate) => this.props.navigation.navigate('Register')}
+          onPress={() => navigate('Register')}
           title="Register"
         />
       </View>
@@ -29,13 +32,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: 'grey',
-  },
-  innerContainer: {
-    alignItems: 'center',
   },
 });

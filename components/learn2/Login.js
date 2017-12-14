@@ -5,20 +5,22 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      username: 'ebiz',
+      password: 'ebiz',
     }
   }
 
   _handlePress() {
 
     if(this.state.username == 'ebiz' && this.state.password == 'ebiz'){
-      Alert.alert('Login Success');
+      // Alert.alert('Login Success');
+      this.props.navigation.navigate('Dashboard');
+
     }else {
       Alert.alert('Login Failed');
     }
 
-}
+  }
 
   render() {
     return (
@@ -34,6 +36,7 @@ export default class Login extends Component {
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         returnKeyLabel = {"next"}
         onChangeText={(text) => this.setState({username: text})}
+        value={this.state.username}
         placeholder="Enter Username"
       />
 
@@ -45,6 +48,7 @@ export default class Login extends Component {
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         returnKeyLabel = {"next"}
         onChangeText={(text) => this.setState({password: text})}
+        value={this.state.password}
         placeholder="Enter Password"
       />
 

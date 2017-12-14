@@ -41,6 +41,7 @@ import { StackNavigator } from 'react-navigation';
 import Home from './components/learn2/Home';
 import Login from './components/learn2/Login';
 import Register from './components/learn2/Register';
+import Dashboard from './components/learn2/Dashboard';
 
 const HomeScreen = ({navigation} ) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -48,15 +49,21 @@ const HomeScreen = ({navigation} ) => (
   </View>
 );
 
-const LoginScreen = (navigation) => (
+const LoginScreen = ({navigation}) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Login/>
+    <Login navigation = {navigation}/>
   </View>
 );
 
-const RegisterScreen = (navigation) => (
+const RegisterScreen = ({navigation}) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Register/>
+  </View>
+);
+
+const DashboardScreen = ({navigation}) => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Dashboard/>
   </View>
 );
 
@@ -67,18 +74,28 @@ const RootNavigator = StackNavigator({
       headerTitle: 'Ebiz App',
     },
   },
+
   Login: {
     screen: LoginScreen,
     navigationOptions: {
       headerTitle: 'Login',
     },
   },
+
   Register: {
     screen: RegisterScreen,
     navigationOptions: {
       headerTitle: 'Create an Account',
     },
   },
+
+  Dashboard: {
+    screen: DashboardScreen,
+    navigationOptions: {
+      headerTitle: 'Dashboard',
+    },
+  },
+  
 });
 
 export default RootNavigator;
