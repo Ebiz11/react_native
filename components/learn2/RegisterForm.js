@@ -21,7 +21,7 @@ export default class RegisterForm extends Component {
     _register() {
       console.log('aaaaaaaaaaa');
 
-        if(this.state.password == this.state.confirmpassword)
+        if(this.state.password == this.state.confirmpassword) 
           Alert.alert('Register Success');
 
         else
