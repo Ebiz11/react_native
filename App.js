@@ -51,9 +51,7 @@ const HomeScreen = ({navigation} ) => (
 );
 
 const LoginScreen = ({navigation}) => (
-  <View>
     <Login navigation = {navigation}/>
-  </View>
 );
 
 const RegisterScreen = ({navigation}) => (
@@ -79,10 +77,7 @@ const MemberListScreen = ({navigation}) => (
 
 const RootNavigator = StackNavigator({
   Home: {
-    screen: HomeScreen,
-    navigationOptions: {
-      headerTitle: 'Ebiz App',
-    },
+    screen: HomeScreen
   },
 
   Login: {
