@@ -21,7 +21,7 @@ export default class RegisterForm extends Component {
     _register() {
       console.log('aaaaaaaaaaa');
 
-        if(this.state.password == this.state.confirmpassword) 
+        if(this.state.password == this.state.confirmpassword)
           Alert.alert('Register Success');
 
         else
@@ -41,6 +41,7 @@ export default class RegisterForm extends Component {
                             returnKeyType="next"
                             placeholder='Full Name'
                             placeholderTextColor='rgba(225,225,225,0.7)'
+                            underlineColorAndroid = "transparent"
                             onChangeText={(text) => this.setState({fullname: text})}
                             // value = {this.state.fullname}
                             />
@@ -49,6 +50,7 @@ export default class RegisterForm extends Component {
                           returnKeyType="go" ref={(input)=> this.passwordInput = input}
                           placeholder='Phone Number'
                           placeholderTextColor='rgba(225,225,225,0.7)'
+                          underlineColorAndroid = "transparent"
                           onChangeText={(text) => this.setState({phone: text})}
                           // value = {this.state.phone}
                           />
@@ -60,6 +62,7 @@ export default class RegisterForm extends Component {
                             keyboardType='email-address'
                             returnKeyType="next"
                             placeholder='Username'
+                            underlineColorAndroid = "transparent"
                             placeholderTextColor='rgba(225,225,225,0.7)'
                             onChangeText={(text) => this.setState({username: text})}
                             // value = {this.state.username}
@@ -70,6 +73,7 @@ export default class RegisterForm extends Component {
                            placeholder='Password'
                            placeholderTextColor='rgba(225,225,225,0.7)'
                            secureTextEntry
+                           underlineColorAndroid = "transparent"
                            onChangeText={(text) => this.setState({password: text})}
                            // value = {this.state.password}
                            />
@@ -79,6 +83,7 @@ export default class RegisterForm extends Component {
                            placeholder='Confirm Password'
                            placeholderTextColor='rgba(225,225,225,0.7)'
                            secureTextEntry
+                           underlineColorAndroid = "transparent" 
                            onChangeText={(text) => this.setState({confirmpassword: text})}
                            // value = {this.state.confirmpassword}
                            />
