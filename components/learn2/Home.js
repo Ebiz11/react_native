@@ -23,6 +23,11 @@ export default class Home extends Component {
           onPress={() => navigate('Register')}
           title="Register"
         />
+        <Text></Text>
+        <Button
+          onPress={() => navigate('Member')}
+          title="Member"
+        />
       </View>
     );
   }

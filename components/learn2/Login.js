@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, Button, Alert, ScrollView } from 'react-native';
+import { Text, TouchableOpacity, View, StyleSheet, TextInput, Button, Alert, ScrollView } from 'react-native';
 
 export default class Login extends Component {
   constructor(props) {
@@ -27,40 +27,42 @@ export default class Login extends Component {
     <ScrollView style={styles.content}>
       <View style={styles.container}>
       <Text></Text>
-      <Text>Login</Text>
+      <Text style = {styles.textLabel}>Login</Text>
       <Text></Text>
       <Text></Text>
 
-      <Text>Username: </Text>
+      <Text style = {styles.textLabel}>Username: </Text>
       <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        style = {styles.input}
         returnKeyLabel = {"next"}
         onChangeText={(text) => this.setState({username: text})}
         value={this.state.username}
         placeholder="Enter Username"
+        underlineColorAndroid = "transparent"
       />
 
       <Text></Text>
       <Text></Text>
 
-      <Text>Password:</Text>
+      <Text style = {styles.textLabel}>Password:</Text>
       <TextInput
-        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        style = {styles.input}
         returnKeyLabel = {"next"}
         onChangeText={(text) => this.setState({password: text})}
         value={this.state.password}
         placeholder="Enter Password"
+        secureTextEntry={true}
+        underlineColorAndroid = "transparent"
       />
 
       <Text></Text>
       <Text></Text>
 
-      <Button
-        onPress={() => this._handlePress()}
-        title="Login"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <TouchableOpacity
+         style = {styles.submitButton}
+         onPress={() => this._handlePress()}>
+         <Text style = {styles.submitButtonText}> Login </Text>
+      </TouchableOpacity>
       </View>
     </ScrollView>
     );
@@ -80,4 +82,24 @@ const styles = StyleSheet.create({
   innerContainer: {
     alignItems: 'center',
   },
+  input: {
+   margin: 20,
+   height: 40,
+   borderColor: '#7a42f4',
+   borderWidth: 1
+  },
+  textLabel: {
+    margin: 20
+  },
+  submitButton: {
+   backgroundColor: '#7a42f4',
+   padding: 10,
+   margin: 15,
+   height: 40,
+  },
+  submitButtonText:{
+    color: 'white',
+    fontWeight: "bold",
+    textAlign: 'center',
+  }
 });

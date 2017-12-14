@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, Image, AppRegistry } from 'react-native';
+import { View, Text, Button, Image, ScrollView } from 'react-native';
 
 /* Learn 1 */
 // // You can import from local files
@@ -42,6 +42,7 @@ import Home from './components/learn2/Home';
 import Login from './components/learn2/Login';
 import Register from './components/learn2/Register';
 import Dashboard from './components/learn2/Dashboard';
+import MemberList from './components/learn2/MemberList';
 
 const HomeScreen = ({navigation} ) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -50,20 +51,29 @@ const HomeScreen = ({navigation} ) => (
 );
 
 const LoginScreen = ({navigation}) => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+  <View>
     <Login navigation = {navigation}/>
   </View>
 );
 
 const RegisterScreen = ({navigation}) => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Register/>
-  </View>
+
+  <ScrollView>
+    <View>
+      <Register/>
+    </View>
+  </ScrollView>
 );
 
 const DashboardScreen = ({navigation}) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
     <Dashboard/>
+  </View>
+);
+
+const MemberListScreen = ({navigation}) => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <MemberList/>
   </View>
 );
 
@@ -94,6 +104,13 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'Dashboard',
       headerLeft: null
+    },
+  },
+
+  Member: {
+    screen: MemberListScreen,
+    navigationOptions: {
+      headerTitle: 'Member List'
     },
   },
 
