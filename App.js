@@ -1,41 +1,84 @@
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
-import { TabNavigator} from 'react-navigation';
+import { View, Text, Button, Image, AppRegistry } from 'react-native';
 
+/* Learn 1 */
+// // You can import from local files
+// import { TabNavigator } from 'react-navigation';
 
-// You can import from local files
-import Profile from './components/Profile';
-import Home from './components/Home';
-import FlatListBasics from './components/FlatListBasics';
+// import Profile from './components/learn1/Profile';
+// import Home from './components/learn1/Home';
+// import FlatListBasics from './components/learn1/FlatListBasics';
+//
+// const HomeScreen = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <Home/>
+//   </View>
+// );
+//
+// const ProfileScreen = () => (
+//   <View>
+//     <Profile/>
+//   </View>
+// );
+//
+// const ListScreen = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <FlatListBasics/>
+//   </View>
+// )
+//
+// const RootTabs = TabNavigator({
+//   Home: { screen: HomeScreen },
+//   Profile: { screen: ProfileScreen },
+//   List: { screen: ListScreen }
+// });
+//
+// export default RootTabs;
 
-const HomeScreen = () => (
+/* Learn 2 */
+import { StackNavigator } from 'react-navigation';
+
+import Home from './components/learn2/Home';
+import Login from './components/learn2/Login';
+import Register from './components/learn2/Register';
+
+const HomeScreen = ({navigation} ) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Home/>
+    <Home navigation = { navigation }/>
   </View>
 );
 
-const ProfileScreen = () => (
-  <View>
-    <Profile/>
+const LoginScreen = (navigation) => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Login/>
   </View>
 );
 
-const ListScreen = () => (
+const RegisterScreen = (navigation) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <FlatListBasics/>
+    <Register/>
   </View>
-)
+);
 
-const RootTabs = TabNavigator({
+const RootNavigator = StackNavigator({
   Home: {
     screen: HomeScreen,
+    navigationOptions: {
+      headerTitle: 'Ebiz App',
+    },
   },
-  Profile: {
-    screen: ProfileScreen,
+  Login: {
+    screen: LoginScreen,
+    navigationOptions: {
+      headerTitle: 'Login',
+    },
   },
-  List: {
-    screen: ListScreen,
-  }
+  Register: {
+    screen: RegisterScreen,
+    navigationOptions: {
+      headerTitle: 'Create an Account',
+    },
+  },
 });
 
-export default RootTabs;
+export default RootNavigator;

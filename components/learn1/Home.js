@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Button, Modal, StyleSheet } from 'react-native';
 
-export default class Profile extends Component {
+export default class Home extends Component {
   state = {
     modalVisible: false,
   };
