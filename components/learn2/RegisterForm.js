@@ -19,10 +19,9 @@ export default class RegisterForm extends Component {
   }
 
     _register() {
-      console.log('aaaaaaaaaaa');
 
         if(this.state.password == this.state.confirmpassword)
-          Alert.alert('Register Success');
+          this.props.navigation.navigate('Drawer');
 
         else
           Alert.alert('password and confirmation do not match');
@@ -83,7 +82,7 @@ export default class RegisterForm extends Component {
                            placeholder='Confirm Password'
                            placeholderTextColor='rgba(225,225,225,0.7)'
                            secureTextEntry
-                           underlineColorAndroid = "transparent" 
+                           underlineColorAndroid = "transparent"
                            onChangeText={(text) => this.setState({confirmpassword: text})}
                            // value = {this.state.confirmpassword}
                            />

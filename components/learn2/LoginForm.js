@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
     _login() {
 
       if(this.state.username == 'ebiz' && this.state.password == 'ebiz')
-        this.props.navigation.navigate('Dashboard');
+        this.props.navigation.navigate('Drawer');
 
       else
         Alert.alert('Login Failed');

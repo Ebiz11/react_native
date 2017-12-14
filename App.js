@@ -43,6 +43,7 @@ import Login from './components/learn2/Login';
 import Register from './components/learn2/Register';
 import Dashboard from './components/learn2/Dashboard';
 import MemberList from './components/learn2/MemberList';
+import Drawer from './components/learn2/Drawer';
 
 const HomeScreen = ({navigation} ) => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -55,7 +56,11 @@ const LoginScreen = ({navigation}) => (
 );
 
 const RegisterScreen = ({navigation}) => (
-    <Register/>
+    <Register navigation = {navigation}/>
+);
+
+const DrawerScreen = ({navigation}) => (
+    <Drawer/>
 );
 
 const DashboardScreen = ({navigation}) => (
@@ -65,12 +70,15 @@ const DashboardScreen = ({navigation}) => (
 );
 
 const MemberListScreen = ({navigation}) => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <MemberList/>
-  </View>
+  <MemberList/>
 );
 
 const RootNavigator = StackNavigator({
+
+  Index : {
+    screen: HomeScreen,
+  },
+
   Home: {
     screen: HomeScreen
   },
@@ -80,6 +88,10 @@ const RootNavigator = StackNavigator({
     navigationOptions: {
       headerTitle: 'Login',
     },
+  },
+
+  Drawer: {
+    screen: DrawerScreen
   },
 
   Register: {
@@ -104,6 +116,10 @@ const RootNavigator = StackNavigator({
     },
   },
 
+},
+{
+  initialRouteName: 'Index',
+  headerMode: 'none',
 });
 
 export default RootNavigator;
