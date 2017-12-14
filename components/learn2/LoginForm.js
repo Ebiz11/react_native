@@ -69,16 +69,16 @@ const styles = StyleSheet.create({
         color: '#fff'
     },
     buttonContainer:{
-        backgroundColor: '#2980b6',
+        backgroundColor: '#e1e6df',
         paddingVertical: 15
     },
     buttonText:{
-        color: '#fff',
+        color: '#df3b6b',
         textAlign: 'center',
         fontWeight: '700'
     },
     loginButton:{
-      backgroundColor:  '#2980b6',
+      backgroundColor:  '#e1e6df',
        color: '#fff'
     }
 

@@ -55,12 +55,7 @@ const LoginScreen = ({navigation}) => (
 );
 
 const RegisterScreen = ({navigation}) => (
-
-  <ScrollView>
-    <View>
-      <Register/>
-    </View>
-  </ScrollView>
+    <Register/>
 );
 
 const DashboardScreen = ({navigation}) => (
