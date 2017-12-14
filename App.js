@@ -93,9 +93,10 @@ const RootNavigator = StackNavigator({
     screen: DashboardScreen,
     navigationOptions: {
       headerTitle: 'Dashboard',
+      headerLeft: null
     },
   },
-  
+
 });
 
 export default RootNavigator;
