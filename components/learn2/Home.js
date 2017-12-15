@@ -28,6 +28,11 @@ export default class Home extends Component {
           onPress={() => navigate('Member')}
           title="Member"
         />
+        <Text></Text>
+        <Button
+          onPress={() => navigate('Dashboard')}
+          title="Scan"
+        />
       </View>
     );
   }

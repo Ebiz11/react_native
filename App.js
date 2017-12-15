@@ -64,9 +64,7 @@ const DrawerScreen = ({navigation}) => (
 );
 
 const DashboardScreen = ({navigation}) => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Dashboard/>
-  </View>
+    <Dashboard navigation = {navigation}/>
 );
 
 const MemberListScreen = ({navigation}) => (
